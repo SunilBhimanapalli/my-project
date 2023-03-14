@@ -6,7 +6,7 @@ on:
       - ".github/workflows/ci-pipeline.yml"
 
 jobs:
-  Gradle build:
+  Gradle-build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,10 +23,10 @@ jobs:
       with:
         arguments: build
   
-  Docker Image build:
+  Docker-Image-build:
     runs-on: ubuntu-latest
     steps:
-    uses: mr-smithers-excellent/docker-build-push@v4
+    - uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: sunil0019/my-project:sha-${GITHUB_SHA:0:7}
         registry: docker.io
