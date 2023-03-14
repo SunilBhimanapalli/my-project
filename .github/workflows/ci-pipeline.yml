@@ -24,6 +24,7 @@ jobs:
   
   Docker-Image-build:
     runs-on: ubuntu-latest
+    needs: Gradle-build
     steps:
     - uses: actions/checkout@v3
       name: Check out code
